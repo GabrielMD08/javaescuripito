@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exibin</title>
+</head>
+
+<body>
+
+    <script>
+        let num_cliente = prompt('o numero do cliente');
+        let nome_cliente;
+        let tipo_cliente;
+        let valor = prompt('Digite o valor da compra');
+        let desconto;
+        let valor_final= parseFloat(valor) * desconto;
+
+        switch (num_cliente) 
+        {
+            case '1': nome_cliente= 'Elma Maria' ; tipo_cliente= 'vip'; desconto= 0.7; break;
+            case '2': nome_cliente= 'Giuseppe Cadura' ; tipo_cliente= 'premium'; desconto= 0.8; break;
+            case '3': nome_cliente= 'Balan Sarrola' ; tipo_cliente= 'padrão'; desconto= 0.9; break;
+            default: alert('Cliente inexistente'); break;
+        }
+
+        
+        alert('Cliente: ' + nome_cliente + '\n' + 'Tipo de cliente: ' + tipo_cliente + '\n' + ' Valor total da compra: R$ ' + valor_final.toFixed(2));
+    
+        
+    </script>
+
+</body>
+
+</html>

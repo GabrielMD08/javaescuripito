@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exibindo uma variavel</title>
+</head>
+<body>
+    
+    <h1>SUA NOTA FINAL</h1>
+
+    <form action=""></form>
+
+
+    <p id="nota-1"></p>
+    <p id="nota-2"></p>
+    <p id="nota-3"></p>
+    <p id="final"></p>
+
+
+    <script>
+        let nota_1= prompt('Digite a nota 1');
+        let nota_2= prompt('Digite a nota 2');
+        let nota_3= prompt('Digite a nota 3');
+        let final =(parseFloat(nota_1)+parseFloat(nota_2)+parseFloat(nota_3)) / 3;
+
+        
+        console.log('nota 1: ' + nota_1);
+        console.log('nota 2: ' + nota_2);
+        console.log('nota 3: ' + nota_3);
+
+
+        document.getElementById('nota-1').innerHTML = 'nota 1: ' + nota_1;
+        document.getElementById('nota-2').innerHTML = 'nota 2: ' + nota_2;
+        document.getElementById('nota-3').innerHTML = 'nota 3: ' + nota_3;
+
+
+        if (final >= 70 ) 
+        {
+            console.log('Sua nota final é: ' + Math.round(final) + '. APROVADO!!!');
+            document.getElementById('final').innerHTML = 'Sua nota final é: ' + Math.round(final) + '. APROVADO!!!';
+            alert('Sua nota final é: ' + Math.round(final) + '. APROVADO!!!');
+            
+        }
+
+        if (final < 70 && final >= 50 ) 
+        {
+            console.log('Sua nota final é: ' + Math.round(final) + '. RECUPERAÇÃO!!!');
+            document.getElementById('final').innerHTML = 'Sua nota final é: ' + Math.round(final) + '. RECUPERAÇÃO!!!';
+            alert('Sua nota final é: ' + Math.round(final) + '. RECUPERAÇÃO!!!');
+        }
+
+        if (final < 50)
+        {
+            console.log('Sua nota final é: ' + Math.round(final) + '. REPROVADO!!!');
+            document.getElementById('final').innerHTML = 'Sua nota final é: ' + Math.round(final) + '. REPROVADO!!!';
+            alert('Sua nota final é: ' + Math.round(final) + '. REPROVADO!!!');
+        }
+    </script>
+    
+</body>
+</html>
