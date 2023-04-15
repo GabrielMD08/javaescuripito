@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let limitador= ' ';
+        let pessoa1 = ' ';
+        let pessoa2 = ' ';
+        let pessoa3 = ' ';
+        let pessoa4 = ' ';
+        let pessoa5 = ' ';
+        
+
+
+    
+        while (limitador <= 2) {
+
+            let nome = prompt('nome');
+            let idade = parseInt(prompt('idade'));
+            let espaço = parseInt(prompt('escolha o espaço'));
+            
+
+            if (pessoa1 == ' ' && espaço == 1) {
+                pessoa1 = nome + idade;
+                limitador++;
+                alert('salvo'+ limitador)
+            }
+
+            else if (pessoa2 == ' ' && espaço == 2) {
+                pessoa2 =  nome + idade;
+                alert('salvo' + limitador)
+                limitador++;
+            }
+            else {
+                alert('Espaço invalido');
+            }
+
+        }
+
+        alert(pessoa1 + '\n' + pessoa2);
+
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+
+<script>
+    //         let nomeMaisVelho;
+    //         let idadeMaisVelho = -Infinity; // Inicia com um valor baixo para garantir que o primeiro valor digitado será maior
+    //         for (let i = 0; i < 5; i++) {
+    //             let nome = prompt("Digite o nome da " + (i+1) + "ª pessoa:");
+    //             let idade = parseInt(prompt("Digite a idade da " + (i+1) + "ª pessoa:"));
+    //             if (idade > idadeMaisVelho) {
+    //                 idadeMaisVelho = idade;
+    //                 nomeMaisVelho = nome;
+    //             }
+    //         }
+    //         alert("A pessoa mais velha é: " + nomeMaisVelho);
+    //     </script>
+    
