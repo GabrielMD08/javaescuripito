@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let palavraSecreta = prompt("Digite a palavra secreta:").toUpperCase();
+        let tamanhoPalavra = palavraSecreta.length;
+        let letrasChutadas = "";
+        let letrasErradas = "";
+        let letrasCorretas = "";
+
+        let palavraEscondida = "";
+        for (let i = 0; i < tamanhoPalavra; i++) {
+            palavraEscondida += "_";
+        }
+
+        const MAX_TENTATIVAS = 6;
+        let tentativas = 0;
+
+        while (tentativas < MAX_TENTATIVAS && palavraEscondida !== palavraSecreta) {
+            let letra = prompt("Digite uma letra:").toUpperCase();
+
+            if (letrasChutadas.includes(letra)) {
+                alert("Você já chutou essa letra. Tente outra.");
+                continue;
+            }
+
+            letrasChutadas += letra;
+
+            if (palavraSecreta.includes(letra)) {
+                letrasCorretas += letra;
+                for (let i = 0; i < tamanhoPalavra; i++) {
+                    if (palavraSecreta[i] === letra) {
+                        palavraEscondida = palavraEscondida.substring(0, i) + letra + palavraEscondida.substring(i + 1);
+                    }
+                }
+            } else {
+                letrasErradas += letra;
+                tentativas++;
+            }
+
+            console.log("A palavra secreta é: " + palavraEscondida);
+            console.log("Letras chutadas: " + letrasChutadas);
+            console.log("Letras erradas: " + letrasErradas);
+            console.log("Letras corretas: " + letrasCorretas);
+        }
+
+        if (palavraEscondida === palavraSecreta) {
+            console.log("Parabéns, você acertou a palavra secreta!");
+        } else {
+            console.log("Você perdeu! A palavra secreta era " + palavraSecreta + ".");
+        }
+    </script>
+</body>
+
+</html>

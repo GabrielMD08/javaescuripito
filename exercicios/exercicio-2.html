@@ -11,17 +11,16 @@
 <body>
     <script>
 
-        let limitador= ' ';
+        let limitador= 0;
         let pessoa1 = ' ';
         let pessoa2 = ' ';
         let pessoa3 = ' ';
-        let pessoa4 = ' ';
-        let pessoa5 = ' ';
+        let num = Math.max (pessoa1,pessoa2,pessoa3);
         
 
 
     
-        while (limitador <= 2) {
+        while (limitador < 3) {
 
             let nome = prompt('nome');
             let idade = parseInt(prompt('idade'));
@@ -33,11 +32,15 @@
                 limitador++;
                 alert('salvo'+ limitador)
             }
-
             else if (pessoa2 == ' ' && espaço == 2) {
                 pessoa2 =  nome + idade;
-                alert('salvo' + limitador)
                 limitador++;
+                alert('salvo' + limitador);
+            }
+            else if (pessoa3 == ' ' && espaço == 3) {
+                pessoa3 =  nome + idade;
+                limitador++;
+                alert('salvo' + limitador);
             }
             else {
                 alert('Espaço invalido');
@@ -45,7 +48,8 @@
 
         }
 
-        alert(pessoa1 + '\n' + pessoa2);
+
+        alert(num);
 
     </script>
 
