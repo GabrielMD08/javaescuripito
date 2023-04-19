@@ -13,35 +13,53 @@
 
         let palavra = prompt('Insira a paravra secreta:').toUpperCase();
         let tamanho = palavra.length;
-        let tentativas = 5;
+        const MAX_TENTATIVAS = 5;
+        let tentativas = 0;
         let palpite = '';
         let corretas = '';
         let erradas = '';
         let oculto = '';
 
-        for(let i= 0; i < tamanho; i++){
+        for (let i = 0; i < tamanho; i++) {
             oculto += '_'
         }
 
-       
-        while ((oculto != palavra) && (tentativas != 0)) { 
 
-            
-            letra = prompt('palavra secreta: ' + oculto + '\n' + 'Tentativas: ' + tentativas);
-            
-            if(oculto.includes(letra))
-            for (let i = 0; i < tamanho; i++) {
-                    if (oculto[i] === letra) {
-                        oculto = oculto.substring(0, i) + letra + oculto.substring(i + 1);
+
+        while (tentativas < MAX_TENTATIVAS || oculto === palavra) {
+
+            letra = prompt('palavra secreta: ' + oculto + '\n' + 'Tentativas: ' + tentativas + '\n' + 'Letras já chutadas: ' + palpite + '\n' + 'Letras certas: ' + corretas + '\n' + 'Letras erradas: ' + erradas).toUpperCase();
+
+
+            if (palpite.includes(letra)) {
+                alert('Letra ja chutada, escolha outra!');
+            }
+
+            else if (palavra.includes(letra)) {
+                palpite += letra;
+                corretas += letra;
+
+                for (let j = 0; j < tamanho; j++) {
+                    if (palavra[j] === letra) {
+                        oculto = oculto.substring(0, j) + letra + oculto.substring(j + 1);
                     }
                 }
+            }
 
-            
+            else {
+                palpite += letra;
+                erradas += letra;
+                tentativas++;
+            }
 
-            
+        }
 
+        if(oculto === palavra){
+            alert('Parabens! a palavra secreta era ' + palavra)
+        }
 
-            
+        else if(tentativas == 5){
+            alert('GAMME OVER!! você exedeu o total de ' + MAX_TENTATIVAS +' tentativas.' + '\n' + ' A palavra oculta era: ' + palavra )
         }
 
 
